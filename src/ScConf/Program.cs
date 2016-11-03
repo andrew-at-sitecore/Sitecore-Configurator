@@ -65,7 +65,8 @@
               continue;
             }
 
-            var disabledFilePath = actualFileName.DisabledFileName;
+            var disabledFilePath = Path.Combine(file.DirectoryName, actualFileName.DisabledFileName);
+
             if (File.Exists(disabledFilePath))
             {
               File.Delete(disabledFilePath);
